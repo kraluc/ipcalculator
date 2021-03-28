@@ -26,7 +26,7 @@ class IPCalculator:
     @property
     def netmask(self):
         if self.network:
-        return self.network.netmask
+            return self.network.netmask
 
     def get_network(self):
         """ Returns the network. """
@@ -52,15 +52,9 @@ class IPCalculator:
 
         print('The results of the calculation is:')
         print(f'-> Input network:\t\t{self.get_network()}')
-<<<<<<< HEAD
-        print(f'-> Network address:\t\t{self.get_network_address()}')
-        print(f'-> Netmask:\t\t\t{self.get_netmask()}')
-        print(f'-> Broadcast address:\t\t{self.get_broadcast_address()}')
-=======
         print(f'-> Network address:\t\t{self.network_address()}')
         print(f'-> Netmask:\t\t{self.netmask()}')
         print(f'-> Broadcast address:\t\t{self.broadcast_address()}')
->>>>>>> refactor
         print(f'-> First IP address:\t\t{self.get_first_ip()}')
         print(f'-> Last IP address:\t\t{self.get_last_ip()}')
 

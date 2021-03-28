@@ -21,13 +21,15 @@ class IPCalculator:
     def get_first_ip(self):
         """ Calculates the first IP address. """
 
-        first_ip = list(self.network.hosts())[0]
+        network_address = self.get_network_address()
+        first_ip = network_address + 1
         return str(first_ip)
 
     def get_last_ip(self):
         """ Calculates the last IP address."""
 
-        last_ip = list(self.network.hosts())[-1]
+        broadcast_address = self.get_broadcast_address()
+        last_ip = broadcast_address - 1
         return str(last_ip)
 
     def get_broadcast_address(self):

@@ -13,6 +13,21 @@ class IPCalculator:
     def __init__(self, network):
         self.network = ipaddress.IPv4Network(network)
 
+    @property
+    def broadcast_address(self):
+        if self.network:
+            return self.network.broadcast_address
+
+    @property
+    def network_address(self):
+        if self.network:
+            return self.network.network_address
+
+    @property
+    def netmask(self):
+        if self.network:
+        return self.network.netmask
+
     def get_network(self):
         """ Returns the network. """
 
@@ -32,29 +47,20 @@ class IPCalculator:
         last_ip = broadcast_address - 1
         return str(last_ip)
 
-    def get_broadcast_address(self):
-        """ Calculates the broadcast address. """
-
-        return self.network.broadcast_address
-
-    def get_network_address(self):
-        """ Calculates the last address. """
-
-        return self.network.network_address
-
-    def get_netmask(self):
-        """ Calculates the netmask. """
-
-        return self.network.netmask
-
     def calculate(self):
         """ Prints the calculation results. """
 
         print('The results of the calculation is:')
         print(f'-> Input network:\t\t{self.get_network()}')
+<<<<<<< HEAD
         print(f'-> Network address:\t\t{self.get_network_address()}')
         print(f'-> Netmask:\t\t\t{self.get_netmask()}')
         print(f'-> Broadcast address:\t\t{self.get_broadcast_address()}')
+=======
+        print(f'-> Network address:\t\t{self.network_address()}')
+        print(f'-> Netmask:\t\t{self.netmask()}')
+        print(f'-> Broadcast address:\t\t{self.broadcast_address()}')
+>>>>>>> refactor
         print(f'-> First IP address:\t\t{self.get_first_ip()}')
         print(f'-> Last IP address:\t\t{self.get_last_ip()}')
 

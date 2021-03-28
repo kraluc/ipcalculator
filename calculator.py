@@ -36,14 +36,14 @@ class IPCalculator:
     def get_first_ip(self):
         """ Calculates the first IP address. """
 
-        network_address = self.get_network_address()
+        network_address = self.network_address
         first_ip = network_address + 1
         return str(first_ip)
 
     def get_last_ip(self):
         """ Calculates the last IP address."""
 
-        broadcast_address = self.get_broadcast_address()
+        broadcast_address = self.broadcast_address
         last_ip = broadcast_address - 1
         return str(last_ip)
 
@@ -52,9 +52,9 @@ class IPCalculator:
 
         print('The results of the calculation is:')
         print(f'-> Input network:\t\t{self.get_network()}')
-        print(f'-> Network address:\t\t{self.network_address()}')
-        print(f'-> Netmask:\t\t{self.netmask()}')
-        print(f'-> Broadcast address:\t\t{self.broadcast_address()}')
+        print(f'-> Network address:\t\t{self.network_address}')
+        print(f'-> Netmask:\t\t\t{self.netmask}')
+        print(f'-> Broadcast address:\t\t{self.broadcast_address}')
         print(f'-> First IP address:\t\t{self.get_first_ip()}')
         print(f'-> Last IP address:\t\t{self.get_last_ip()}')
 
